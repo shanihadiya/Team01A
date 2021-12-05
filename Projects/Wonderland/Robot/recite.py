@@ -15,12 +15,14 @@ SCRIPTS = 3     # MODIFIABLE: Change number of files expected to be received by 
 def main():
     count = 1
     read = []
+    # Directory will be continuously polled for new files until
+    # the number of files dictated by SCRIPTS has been polled.
     while count <= SCRIPTS:
         files = os.listdir(SERVER_DATA_PATH)[-1]
         if files is None:
             pass
         elif files not in read:
-            # Some code has been written to get your started
+            # Some code has been written to get you started
             # *********** Your code goes here *********** # 
             read.append(files)
             count = count + 1
